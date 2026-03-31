@@ -39,7 +39,7 @@ impl NotificationService {
             .body(to_string(&payload).unwrap())
             .send().await;
         
-        log::warn!("Sent subscribe request to: {}", request_url);
+        log::warn_!("Sent subscribe request to: {}", request_url);
 
         return match request {
             Ok(f) => match f.json::<SubscriberRequest>().await {
